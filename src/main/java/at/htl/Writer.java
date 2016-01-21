@@ -17,15 +17,19 @@ public class Writer {
         new Thread(() -> {
             try {
                 BufferedReader bs = new BufferedReader(new InputStreamReader(
-                        new FileInputStream(sourceFile), Charset.forName("UTF-16")));
-                PrintWriter pw;
+                        new FileInputStream(sourceFile), Charset.forName("UTF-8")));
+                PrintWriter pw = new PrintWriter(f, "UTF-8");
+                String s;
 
-                for (char c : bs.readLine().toCharArray()) {
-                    pw = new PrintWriter(f,"UTF-8");
-                    pw.print(c);
-                    Thread.sleep(1000L);
-                    pw.close();
+                while( (s = bs.readLine()) != null) {
+                        pw.println(s);
+                        char[] c = s.toCharArray();
+                        System.out.println(s);
+                        Thread.sleep(1000L);
+                        pw.flush();
                 }
+
+                pw.close();
 
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
