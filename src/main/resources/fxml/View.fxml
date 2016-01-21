@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.htl.ViewController">
+   <children>
+      <TextArea fx:id="taLogger" editable="false" layoutX="14.0" layoutY="14.0" prefHeight="367.0" prefWidth="387.0" />
+      <Button fx:id="btnChooseDir" layoutX="413.0" layoutY="41.0" mnemonicParsing="false" onAction="#HandleDirChooser" prefHeight="27.0" prefWidth="171.0" text="Choose Directory" />
+      <Button fx:id="btnStart" layoutX="413.0" layoutY="354.0" mnemonicParsing="false" onAction="#handleStartAction" prefHeight="27.0" prefWidth="171.0" text="Start Writing" />
+      <TextField fx:id="tfDirectory" layoutX="415.0" layoutY="14.0" onAction="#HandleDirChooser" />
+      <Button fx:id="btnFileToWrite" layoutX="413.0" layoutY="109.0" mnemonicParsing="false" onAction="#HandleAddFile" prefHeight="27.0" prefWidth="171.0" text="Add File to Write" />
+      <TextArea fx:id="taFiles" editable="false" layoutX="417.0" layoutY="146.0" prefHeight="190.0" prefWidth="167.0" />
+   </children>
+</AnchorPane>
