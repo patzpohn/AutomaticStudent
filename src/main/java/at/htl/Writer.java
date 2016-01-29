@@ -1,5 +1,7 @@
 package at.htl;
 
+import javafx.scene.control.TextArea;
+
 import java.io.*;
 import java.nio.charset.Charset;
 
@@ -7,12 +9,16 @@ import java.nio.charset.Charset;
  * Created by patrickpohn on 21/01/16.
  */
 public class Writer {
-    public void startWriting(File sourceFile, File target) throws IOException {
+    public void startWritingFromFile(File sourceFile, File target, TextArea ta) throws IOException {
 
         File f = new File(target.getPath() + "/" + sourceFile.getName());
 
         if(!f.exists())
             f.createNewFile();
+
+        Logger log = new Logger();
+        log.AddLine("Start writing " + sourceFile.getName());
+        log.List(ta);
 
         new Thread(() -> {
             try {
@@ -23,9 +29,9 @@ public class Writer {
 
                 while( (s = bs.readLine()) != null) {
                         pw.println(s);
-                        char[] c = s.toCharArray();
-                        System.out.println(s);
-                        Thread.sleep(1000L);
+
+                        //System.out.println(s);
+                        Thread.sleep(100L);
                         pw.flush();
                 }
 

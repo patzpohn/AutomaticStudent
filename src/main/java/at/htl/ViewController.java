@@ -44,7 +44,9 @@ public class ViewController implements Initializable{
     public void handleStartAction(ActionEvent actionEvent) {
         Writer w = new Writer();
         try {
-            w.startWriting(sourceFiles.get(0),targetDir);
+            for (File sourceFile : sourceFiles) {
+                w.startWritingFromFile(sourceFile,targetDir,taLogger);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -85,5 +87,12 @@ public class ViewController implements Initializable{
         }
 
         taFiles.setText(text);
+    }
+
+    public void AddProject(ActionEvent actionEvent) {
+
+    }
+
+    public void handleRandomText(ActionEvent actionEvent) {
     }
 }
