@@ -18,15 +18,24 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 /**
- * Created by patrickpohn on 21/01/16.
+ * @timeline .
+ * 2016-01-21: PON 001  created class
+ * 2016-01-21: PON 060  GUI implementation
+ * 2016-01-21: PON 060  file and directory - chooser
  */
 public class ViewController implements Initializable{
 
     @FXML
-    private Button btnChooseDir, btnFileToWrite, btnStart;
+    private Button btnChooseDir;
+    @FXML
+    private Button btnFileToWrite;
+    @FXML
+    private Button btnStart;
 
     @FXML
-    private TextField tfDirectory, tfFileToWrite;
+    private TextField tfDirectory;
+    @FXML
+    private TextField tfFileToWrite;
 
     @FXML
     private TextArea taLogger,taFiles;

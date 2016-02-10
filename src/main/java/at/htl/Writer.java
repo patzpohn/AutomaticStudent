@@ -6,7 +6,9 @@ import java.io.*;
 import java.nio.charset.Charset;
 
 /**
- * Created by patrickpohn on 21/01/16.
+ * @timeline .
+ * 2016-01-00: PON 001  created class
+ * 2016-01-21: PON 090  writing files
  */
 public class Writer {
     public void startWritingFromFile(File sourceFile, File target, TextArea ta) throws IOException {

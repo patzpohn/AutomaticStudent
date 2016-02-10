@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by patrickpohn on 28/01/16.
+ * @timeline .
+ * 2016-01-21: PON 001  created class
+ * 2016-01-21: PON 020  implemented basic methods
  */
 public class Logger {
 

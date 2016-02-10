@@ -1,6 +1,4 @@
-package at.htl;/**
- * Created by patrickpohn on 21/01/16.
- */
+package at.htl;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +8,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * @timeline .
+ * 2016-01-21: PON 001  created class
+ * 2016-01-21: PON 005  start method
+ */
 public class Main extends Application {
 
     public static void main(String[] args) {
