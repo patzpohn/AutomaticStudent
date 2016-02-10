@@ -7,8 +7,8 @@ import java.nio.charset.Charset;
 
 /**
  * @timeline .
- * 2016-01-00: PON 001  created class
- * 2016-01-21: PON 090  writing files
+ * 21.01.2016: PON 001  created class
+ * 21.01.2016: PON 090  writing files
  */
 public class Writer {
     public void startWritingFromFile(File sourceFile, File target, TextArea ta) throws IOException {

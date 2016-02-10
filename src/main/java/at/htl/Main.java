@@ -10,8 +10,8 @@ import java.io.IOException;
 
 /**
  * @timeline .
- * 2016-01-21: PON 001  created class
- * 2016-01-21: PON 005  start method
+ * 21.01.2016: PON 001  created class
+ * 21.01.2016: PON 005  start method
  */
 public class Main extends Application {
 

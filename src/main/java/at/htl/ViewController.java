@@ -19,9 +19,9 @@ import java.util.ResourceBundle;
 
 /**
  * @timeline .
- * 2016-01-21: PON 001  created class
- * 2016-01-21: PON 060  GUI implementation
- * 2016-01-21: PON 090  file and directory - chooser
+ * 21.01.2016: PON 001  created class
+ * 21.01.2016: PON 060  GUI implementation
+ * 21.01.2016: PON 090  file and directory - chooser
  */
 public class ViewController implements Initializable{
 

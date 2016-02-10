@@ -7,8 +7,8 @@ import java.util.List;
 
 /**
  * @timeline .
- * 2016-01-21: PON 001  created class
- * 2016-01-21: PON 020  implemented basic methods
+ * 21.01.2016: PON 001  created class
+ * 21.01.2016: PON 020  implemented basic methods
  */
 public class Logger {
 
