@@ -23,7 +23,7 @@ import java.util.ResourceBundle;
  * 21.01.2016: PON 060  GUI implementation
  * 21.01.2016: PON 090  file and directory - chooser
  */
-public class ViewController implements Initializable{
+public class ViewController implements Initializable {
 
     @FXML
     private Button btnChooseDir;
@@ -33,28 +33,32 @@ public class ViewController implements Initializable{
     private Button btnStart;
 
     @FXML
+    private TextField tfAddProject;
+    @FXML
     private TextField tfDirectory;
     @FXML
     private TextField tfFileToWrite;
 
     @FXML
-    private TextArea taLogger,taFiles;
+    private TextArea taLogger, taFiles;
 
     private List<File> files, sourceFiles;
 
     private File targetDir;
+    private File targetProject;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         taLogger.setText("Welcome to Automatic Student!");
         files = new ArrayList<>();
+        tfAddProject.setVisible(false);
     }
 
     public void handleStartAction(ActionEvent actionEvent) {
         Writer w = new Writer();
         try {
             for (File sourceFile : sourceFiles) {
-                w.startWritingFromFile(sourceFile,targetDir,taLogger);
+                w.startWritingFromFile(sourceFile, targetDir, taLogger);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -62,13 +66,33 @@ public class ViewController implements Initializable{
     }
 
     public void HandleDirChooser(ActionEvent actionEvent) {
+
+        Button btn = (Button) actionEvent.getSource();
+        String name = btn.getId();
+        System.out.println(name);
+
         DirectoryChooser dc = new DirectoryChooser();
         dc.setInitialDirectory(new File(System.getProperty("user.home")));
         dc.setTitle("Choose target directory");
 
         File choosedDir = dc.showDialog(new Stage());
-        tfDirectory.setText(choosedDir.getAbsolutePath());
-        targetDir = choosedDir;
+
+        if (name.equals("btnChooseDir")) {
+            tfDirectory.setText(choosedDir.getAbsolutePath());
+            targetDir = choosedDir;
+        } else {
+            tfAddProject.setVisible(true);
+            tfAddProject.setText(choosedDir.getAbsolutePath());
+            targetProject = choosedDir;
+        }
+    }
+
+    public void HandleProjectChooser(ActionEvent actionEvent) {
+        HandleDirChooser(actionEvent);
+        Writer writer = new Writer();
+        writer.startWritingFromProject(targetProject, targetDir);
+        files = writer.getFiles();
+        listFiles();
     }
 
     public void HandleAddFile(ActionEvent actionEvent) {
@@ -96,10 +120,6 @@ public class ViewController implements Initializable{
         }
 
         taFiles.setText(text);
-    }
-
-    public void HandleAddProject(ActionEvent actionEvent) {
-
     }
 
     public void handleRandomText(ActionEvent actionEvent) throws IOException {
