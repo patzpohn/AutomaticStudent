@@ -98,10 +98,12 @@ public class ViewController implements Initializable{
         taFiles.setText(text);
     }
 
-    public void AddProject(ActionEvent actionEvent) {
+    public void HandleAddProject(ActionEvent actionEvent) {
 
     }
 
-    public void handleRandomText(ActionEvent actionEvent) {
+    public void handleRandomText(ActionEvent actionEvent) throws IOException {
+        Writer w = new Writer();
+        w.startWritingRandomText(targetDir);
     }
 }

@@ -48,4 +48,43 @@ public class Writer {
             }
         }).start();
     }
+    public void startWritingRandomText(File target) throws IOException {
+
+        File f = new File(target.getPath() + "/"+"randomtext.java");
+
+        if(!f.exists())
+            f.createNewFile();
+
+        new Thread(()->{
+            BufferedReader bs = null;
+
+            try {
+                bs = new BufferedReader(new InputStreamReader(
+                        new FileInputStream("ViewController.java"), Charset.forName("UTF-8")));
+            PrintWriter pw = new PrintWriter(f,"UTF-8");
+            String s;
+
+            while( (s = bs.readLine()) != null) {
+                pw.println(s);
+
+                //System.out.println(s);
+
+                pw.flush();
+                Thread.sleep(100L);
+            }
+            System.out.println("Finished!");
+            pw.close();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        }).start();
+    }
+    public void startWritingFromProject(){
+
+    }
 }
