@@ -91,6 +91,7 @@ public class ViewController implements Initializable {
         HandleDirChooser(actionEvent);
         Writer writer = new Writer();
         writer.startWritingFromProject(targetProject, targetDir);
+        sourceFiles=writer.getFiles();
         files = writer.getFiles();
         listFiles();
     }
