@@ -22,6 +22,8 @@ import java.util.ResourceBundle;
  * 21.01.2016: PON 001  created class
  * 21.01.2016: PON 060  GUI implementation
  * 21.01.2016: PON 090  file and directory - chooser
+ * 25.02.2016: GNA 060  Choose Projects to write
+ * 04.03.2016: GNA 060  Choose random Text to Write
  */
 public class ViewController implements Initializable {
 
